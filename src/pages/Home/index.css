@@ -1,8 +1,12 @@
-#main-section {
-  background-color: rgb(48, 151, 221);
-  border-radius: 25px;
-  border: 5px solid rgb(76, 170, 225);
-  color: white;
+#content-container {
   max-width: 1000px;
   margin: 2rem auto;
+}
+
+#introduction {
+  background-color: rgb(48, 151, 221);
+  border: 5px solid rgb(91, 179, 231);
+  outline: 2px solid rgb(194, 232, 223);
+  color: rgb(242, 237, 237);
+  border-radius: 25px;
 }
