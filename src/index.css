@@ -1,4 +1,9 @@
 body {
   margin: 0px;
   padding: 0px;
+  background-image: linear-gradient(blue, cyan);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }

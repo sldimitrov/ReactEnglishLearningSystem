@@ -21,7 +21,7 @@
 #id-info {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   min-width: 270px;
   flex-wrap: nowrap;
   height: 100%;
@@ -39,6 +39,7 @@
   list-style-type: none;
   width: 200px;
   padding: 0;
+  margin: 0;
 }
 
 #header-container a {
@@ -50,4 +51,21 @@
 
 #header-container a:hover {
   color: white;
+  text-decoration:underline;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 470px) {
+  #header-container p {
+    font-size: 11px;
+  }
+
+  #header-container a {
+    font-size: 10px;
+  }
+
+  #logo {
+    width: 25px;
+    height: 25px;
+  }
 }

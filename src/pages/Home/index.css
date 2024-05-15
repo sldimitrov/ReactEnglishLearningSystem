@@ -1,0 +1,8 @@
+#main-section {
+  background-color: rgb(48, 151, 221);
+  border-radius: 25px;
+  border: 5px solid rgb(76, 170, 225);
+  color: white;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
