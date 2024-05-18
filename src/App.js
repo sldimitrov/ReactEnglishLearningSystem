@@ -3,6 +3,7 @@ import HomePage from "./pages/Home";
 import DictionaryPage from "./pages/Dictionary";
 import SentencesPage from "./pages/Sentences";
 import RootLayout from "./pages/Root";
+import { ThemeProvider } from "./themeContext";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 }
 
 export default App;

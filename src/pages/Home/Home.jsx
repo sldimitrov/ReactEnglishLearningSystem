@@ -1,4 +1,22 @@
+import { useState } from "react";
+import getDefinition from "../../services/getDefinitions";
+import { useWordsContext } from "../../themeContext";
+
 export default function HomePage() {
+  const [newWord, setNewWord] = useState();
+  const [newWords, setNewWords] = useWordsContext();
+
+  function handleSubmit(event) {
+    /* This function handles the submittion of the form. */
+    event.preventDefault();
+    getDefinition(newWord);
+  }
+
+  function handleSetNewWord(event) {
+    /* This function changes the state of the newWord on every inputted value. */
+    setNewWord(event.target.value);
+  }
+
   return (
     <div id="content-container">
       <article id="introduction">
@@ -7,9 +25,7 @@ export default function HomePage() {
           This section should expose the main purpose behing the project and
           also links where the user should go to start learning new words.{" "}
           <br /> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Perspiciatis incidunt numquam ad maxime distinctio provident
-          temporibus eius dignissimos cumque repudiandae nesciunt mollitia rem,
-          dolor rerum odio itaque alias doloribus reiciendis?
+          Perspiciatis.
         </p>
       </article>
       <section>
@@ -20,11 +36,20 @@ export default function HomePage() {
           write sentences with the use of the word-definition pattern and save
           them in the sentences page.
         </h2>
-        {/* <form onSubmit={handleSubmit(onSubmit)}>
-          <label for="name">Unknown word:</label>
-          <input type="text" placeholder="word" ref="word" />
-          <button type="submit">Submit</button>
-        </form> */}
+        <form onSubmit={handleSubmit}>
+          <div className="word-form">
+            <label htmlFor="word">Enter word:</label>
+            <input
+              type="text"
+              name="word"
+              id="word"
+              onChange={handleSetNewWord}
+            />
+          </div>
+          <div className="form-actions">
+            <button id="button">Save</button>
+          </div>
+        </form>
       </section>
     </div>
   );
